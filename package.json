@@ -1,0 +1,14 @@
+{
+  "name": "components",
+  "version": "0.0.1",
+  "authors": [
+    "Aparna Lingam <aparna.lingam86@gmail.com>"
+  ],
+  "description": "Exploring reusable components",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular2": "2.0.0-alpha.44",
+    "systemjs": "0.19.2"
+  }
+}
