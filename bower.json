@@ -17,7 +17,7 @@
     "react": "~0.12.2",
     "requirejs": "~2.1.15",
     "underscore": "~1.7.0",
-    "polymer": "Polymer/polymer#^1.0.0"
-
+    "polymer": "Polymer/polymer#^1.0.0",
+    "webcomponentsjs": "~0.7.18"
   }
 }
