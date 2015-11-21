@@ -6,7 +6,7 @@ import {bootstrap, Component, CORE_DIRECTIVES} from 'angular2/angular2';
 import {AppComponent} from './app';
 @Component({
     selector: 'display',
-    template: '<p>My name: {{value}}</p>' +
+    template: '<p>My name: {{myName}}</p>' +
                  '<p>Friends:</p>' +
                 '<ul>' +
                 '<li *ng-for="#name of names">' +
