@@ -3,9 +3,10 @@
  */
 
 import {bootstrap, Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {AppComponent} from './app';
 @Component({
     selector: 'display',
-    template: '<p>My name: {{ myName }}</p>' +
+    template: '<p>My name: {{myName}}</p>' +
                  '<p>Friends:</p>' +
                 '<ul>' +
                 '<li *ng-for="#name of names">' +
@@ -15,8 +16,8 @@ import {bootstrap, Component, CORE_DIRECTIVES} from 'angular2/angular2';
                 '<p *ng-if="names.length > 3">You have many friends!</p>',
     directives: [CORE_DIRECTIVES]
 })
-class AppComponent {
+class Display {
     names = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
     myName = 'Alice';
 }
-bootstrap(AppComponent);
+bootstrap(Display);
