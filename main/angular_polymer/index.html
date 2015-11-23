@@ -13,13 +13,22 @@
         });
 
         /*import custom element typescript files*/
-        System.import('./app.ts');
-        System.import('./show-properties.ts');
+
+        System.import('../angular/app.ts');
+        System.import('../angular/show-properties.ts');
     </script>
+
+    <!-- Imports polyfill -->
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <!-- Imports custom element -->
+    <link rel="import" href="../polymer/hello-world.html">
+
 </head>
 <body>
-    <!-- Run custom element -->
-    <my-app>loading...</my-app>
-    <display></display>
+<!-- Runs custom element -->
+<my-app>loading...</my-app>
+<display></display>
+<hello-world who="Polymer" desc="Web components using polymer."></hello-world>
 </body>
 </html>
