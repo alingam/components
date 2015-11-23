@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-var Example = React.createClass({
+var Example = React.createClass({displayName: 'Example',
     getInitialState: function () {
         this.who="Initial";
         this.desc="Initial setup of the React.js"
@@ -12,15 +12,15 @@ var Example = React.createClass({
     },
     render: function () {
         return (
-            <div>
-                <p>Hello <strong>{this.who}</strong> :)</p>
-                <span>{this.desc}</span>
-            </div>
+            React.DOM.div(null, 
+                React.DOM.p(null, "Hello ", React.DOM.strong(null, this.who), " :)"), 
+                React.DOM.span(null, this.desc)
+            )
         );
     }
 });
 
 React.renderComponent(
-<Example />,
+Example(null),
     document.getElementById('rendercontent')
 );
