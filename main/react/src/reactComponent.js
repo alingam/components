@@ -2,19 +2,17 @@
 
 var Example = React.createClass({
     getInitialState: function () {
-        this.who="Initial";
-        this.desc="Initial setup of the React.js"
-        return null;
+        return {who: 'Initial',desc: 'Initial setup of the React.js'};
     },
     componentDidMount:function() {
-        this.who='React.js';
-        this.desc='Using React';
+       this.setState({who: 'React.js'}) ;
+        this.setState({desc: 'Using react.'})
     },
     render: function () {
         return (
             <div>
-                <p>Hello <strong>{this.who}</strong> :)</p>
-                <span>{this.desc}</span>
+                <p>Hello <strong>{this.state.who}</strong> :)</p>
+                <span>{this.state.desc}</span>
             </div>
         );
     }
@@ -22,5 +20,5 @@ var Example = React.createClass({
 
 React.renderComponent(
 <Example />,
-    document.getElementById('rendercontent')
+    document.getElementById('example')
 );
