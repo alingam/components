@@ -10,13 +10,33 @@
     <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
     <!-- Imports custom element -->
-    <link rel="import" href="hello-world.html">
+    <link rel="import" href="../../bower_components/polymer/polymer.html">
+    <link rel="import" href="header.html">
+    <link rel="import" href="hello-polymer.html">
 
 </head>
 <body>
-
+    <header-polymer></header-polymer>
     <!-- Runs custom element -->
-    <hello-world who="Polymer" desc="Web components using polymer."></hello-world>
+    <hello-polymer who="Alice"></hello-polymer>
+
+    <dom-module id="main-document-element">
+        <template>
+            <p>
+                Hi! I'm a Polymer element that was defined in the
+                main document!
+            </p>
+            <p>use HTMLImports.whenReady to define element in main document.</p>
+        </template>
+        <script>
+            HTMLImports.whenReady(function () {
+                Polymer({
+                    is: 'main-document-element'
+                });
+            });
+        </script>
+    </dom-module>
+    <main-document-element></main-document-element>
 
 </body>
 </html>

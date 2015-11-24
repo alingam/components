@@ -5,9 +5,9 @@
 import {bootstrap, Component} from 'angular2/angular2';
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Window App</h1>' +
+    template: '<h4>Angular 2.0 App</h4>' +
               '<div><input (keyup)="toDo($event)"></div>' +
-              '<div>{{value}}</div>'
+              '<p>Text in the input: {{value}}</p>'
 })
 export class AppComponent {
     value = '';

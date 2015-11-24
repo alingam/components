@@ -1,0 +1,24 @@
+<!-- Imports polymer -->
+
+<!-- Defines element markup -->
+<dom-module id="input-text">
+    <template>
+        <input type="text" id="inputText"  value="{{value::input}}">
+        <p>Text in the input: {{value}}</p>
+    </template>
+</dom-module>
+
+<!-- Registers custom element -->
+<script>
+    Polymer({
+        is: 'input-text',
+        properties: {
+            'value': {
+                type: String,
+                reflectToAttribute: true,
+                notify: true,
+                value: null
+            }
+        }
+    });
+</script>

@@ -1,0 +1,31 @@
+<!-- Imports polymer -->
+<link rel="import" href="input.html">
+<!-- Defines element markup -->
+<dom-module id="hello-polymer">
+    <template>
+        <input-text></input-text>
+        <p>My Name: {{who}}</p>
+        <p> Friends: </p>
+        <ul>
+            <template is="dom-repeat" items="{{friends}}">
+                <li>{{item}}</li>
+            </template>
+        </ul>
+    </template>
+</dom-module>
+
+<!-- Registers custom element -->
+<script>
+Polymer({
+    is: 'hello-polymer',
+    properties: {
+        who: {
+            type: String,
+            value: 'Alice'
+        }
+    },
+    ready:function(){
+        this.friends= ['Mathew','John','Rob','Melissa'];
+    }
+});
+</script>

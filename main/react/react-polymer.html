@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React</title>
+    <script src="../../bower_components/es5-shim/es5-shim.min.js"></script>
+    <script src="../../bower_components/es5-shim/es5-sham.min.js"></script>
+    <script src="../../bower_components/react/react.js"></script>
+    <script src="../../bower_components/react/react-with-addons.js"></script>
+    <!--included web component lite-->
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <!-- Imports custom element -->
+    <link rel="import" href="../polymer/hello-polymer.html">
+</head>
+<body>
+    <div id="example"></div>
+    <script src="compiled/reactComponent.js"></script>
+
+    <!-- Runs custom element -->
+    <hello-world who="Polymer" desc="Web components using polymer."></hello-world>
+</body>
+</html>

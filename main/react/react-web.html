@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React</title>
+    <script src="../../bower_components/es5-shim/es5-shim.min.js"></script>
+    <script src="../../bower_components/es5-shim/es5-sham.min.js"></script>
+    <script src="../../bower_components/react/react.js"></script>
+    <script src="../../bower_components/react/react-with-addons.js"></script>
+    <!--Including web components in react-->
+    <script src="../../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+    <link rel="import" href="../webComponents/hello-world.html">
+</head>
+<body>
+    <div id="example"></div>
+    <script src="compiled/reactComponent.js"></script>
+
+    <!-- Runs custom element -->
+    <hello-world who="Web-component" desc="Web component template, custom-tags, import, shadow DOM"></hello-world>
+</body>
+</html>

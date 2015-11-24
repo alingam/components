@@ -8,8 +8,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular2": "2.0.0-alpha.46",
-    "systemjs": "0.19.2"
+    "angular2": "2.0.0-alpha.46"
   },
   "devDependencies": {
     "grunt": "~0.4.4",

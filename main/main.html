@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--Includes for web components-->
+    <script src="../bower_components/es6-shim/es6-shim.min.js"></script>
+    <script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="webComponents/hello-world.html">
+
+    <!--Polymer Includes-->
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="polymer/header.html">
+    <link rel="import" href="polymer/hello-polymer.html">
+
+    <!--import Angular files and typescript support-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+    <script src="angular_1.5/component.js"></script>
+    <script src="angular_1.5/app.js"></script>
+
+    <!--import Angular files and typescript support-->
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.44/angular2.dev.js"></script>
+    <script>
+        System.config({
+            transpiler: 'typescript',
+            typescriptOptions: { emitDecoratorMetadata: true }
+        });
+
+        /*import custom element typescript files*/
+        System.import('angular/app.ts');
+        System.import('angular/show-properties.ts');
+    </script>
+
+    <!--Includes for react-->
+    <script src="../bower_components/es5-shim/es5-shim.min.js"></script>
+    <script src="../bower_components/es5-shim/es5-sham.min.js"></script>
+    <script src="../bower_components/react/react.js"></script>
+    <script src="../bower_components/react/react-with-addons.js"></script>
+    <style>
+        h3{
+            color:#0066cc !important;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="well">
+            <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Angular</h3>
+            <p>
+                <my-app>loading...</my-app>
+                <display></display>
+            </p>
+        </div>
+
+        <div class="well" ng-app="app">
+            <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Angular 1.5</h3>
+            <div>
+                <tabs>
+                    <pane title="Localization">
+                        Date: {{ '2012-04-01' | date:'fullDate' }} <br>
+                        Currency: {{ 123456 | currency }} <br>
+                        Number: {{ 98765.4321 | number }} <br>
+                    </pane>
+                    <pane title="Pluralization">
+                        <div ng-controller="BeerCounter">
+                            <div ng-repeat="beerCount in beers">
+                                <ng-pluralize count="beerCount" when="beerForms"></ng-pluralize>
+                            </div>
+                        </div>
+                    </pane>
+                </tabs>
+            </div>
+        </div>
+
+        <div class="well">
+            <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Web components</h3>
+            <p>
+                <hello-world who="Web-component" desc="Web component template, custom-tags, import, shadow DOM"></hello-world>
+            </p>
+        </div>
+
+        <div class="well">
+            <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Polymer</h3>
+            <p>
+                <header-polymer></header-polymer>
+                <hello-polymer who="Tom"></hello-polymer>
+            </p>
+        </div>
+
+        <div class="well">
+            <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> React</h3>
+            <p>
+                <div id="example"></div>
+            </p>
+        </div>
+    </div>
+
+    <script src="react/compiled/reactComponent.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>

@@ -20,6 +20,7 @@
     "webcomponentsjs": "~0.7.18",
     "react": "0.10.0",
     "es5-shim": "~4.3.1",
-    "es6-shim": "~0.33.13"
+    "es6-shim": "~0.33.13",
+    "document-register-element": "~0.5.0"
   }
 }

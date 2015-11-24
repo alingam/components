@@ -1,0 +1,21 @@
+<!-- Imports polymer -->
+
+<!-- Defines element markup -->
+<dom-module id="header-polymer">
+    <template>
+        <h4>{{header}}</h4>
+    </template>
+</dom-module>
+
+<!-- Registers custom element -->
+<script>
+    Polymer({
+        is: 'header-polymer',
+        properties: {
+            header: {
+                type: String,
+                value: 'Polymer App'
+            }
+        }
+    });
+</script>

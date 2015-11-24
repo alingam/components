@@ -1,6 +1,10 @@
 <html>
 <head>
-    <title>Angular with Polymer</title>
+    <title>Angular 2 with Webcomponents</title>
+
+    <!-- Imports polyfill -->
+    <script src="../../bower_components/es5-shim/es5-shim.min.js"></script>
+    <script src="../../bower_components/webcomponentsjs/webcomponents.min.js"></script>
 
     <!--import Angular files and typescript support-->
     <script src="https://code.angularjs.org/tools/system.js"></script>
@@ -18,18 +22,19 @@
         System.import('../angular/show-properties.ts');
     </script>
 
-    <!-- Imports polyfill -->
-    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
 
     <!-- Imports custom element -->
-    <link rel="import" href="../../bower_components/polymer/polymer.html">
-    <link rel="import" href="../polymer/hello-polymer.html">
-
+    <link rel="import" href="../webComponents/hello-world.html">
 </head>
 <body>
-<!-- Runs custom element -->
+
+<!-- Runs Angular custom element -->
 <my-app>loading...</my-app>
 <display></display>
-<hello-world who="Polymer" desc="Web components using polymer."></hello-world>
+
+<!-- Runs Core Webcomponent custom element -->
+<hello-world who="Web-component" desc="Web component template, custom-tags, import, shadow DOM"></hello-world>
+
 </body>
 </html>
