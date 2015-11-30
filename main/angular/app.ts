@@ -9,7 +9,7 @@ import {bootstrap, Component} from 'angular2/angular2';
               '<div><input (keyup)="toDo($event)"></div>' +
               '<p>Text in the input: {{value}}</p>'
 })
-export class AppComponent {
+class AppComponent {
     value = '';
     toDo(event){
         this.value = event.target.value;
