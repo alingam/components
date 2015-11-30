@@ -1,6 +1,22 @@
-/** @jsx React.DOM */
+var FriendsList = React.createClass({
+    render:function(){
+        var eachFriend=this.props.friends.map(function(friend,index){
+            return(
+                <li key={index}>{friend}</li>
+            )
+        });
+        return(
+            <div>
+                <p>Friends: </p>
+                <ul>
+                    {eachFriend}
+                </ul>
+            </div>
+        )
+    }
+});
 
-var Example = React.createClass({
+var Hello = React.createClass({
     getInitialState: function () {
         return {who: 'Initial',desc: 'Initial setup of the React.js',text:'',name:'',friends:['John','Windstorm','Mike','Melissa']};
     },
@@ -15,7 +31,7 @@ var Example = React.createClass({
         return (
             <div>
                 <h4>React App</h4>
-                <input type="text" id="input-text" onKeyUp={this.changeText}/>
+                <input type="text" id="input-text" onKeyUp={this.changeText}></input>
                 <p>{"Text in the Input: "+this.state.text}</p>
                 <p>{'My Name: '+(this.state.name)}</p>
                 <FriendsList friends={this.state.friends}></FriendsList>
@@ -24,27 +40,8 @@ var Example = React.createClass({
     }
 });
 
-var FriendsList = React.createClass({
-    render:function(){
-        var eachFriend=this.props.friends.map(function(friend,index){
-            return(
-                <li id={index}>{friend}</li>
-            )
-        });
-        return(
-            <div>
-                <p>Friends: </p>
-                <ul>
-                    {eachFriend}
-                </ul>
-            </div>
-        )
-    }
 
-
-});
-
-React.renderComponent(
-<Example />,
-    document.getElementById('example')
+ReactDOM.render(
+    <Hello name="World" />,
+    document.getElementById('container')
 );

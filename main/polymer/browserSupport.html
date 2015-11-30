@@ -1,0 +1,92 @@
+<!-- Imports polymer -->
+
+<!-- Defines element markup -->
+<dom-module id="browser-support">
+    <template>
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <template is="dom-repeat" items="{{browsers}}">
+                    <th>{{item}}</th>
+                </template>
+            </tr>
+            </thead>
+            <tbody>
+            <template is="dom-repeat" items="{{supports}}">
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td><i class$="glyphicon check glyphicon-{{item.chrome}}"></i></td>
+                    <td><i class$="glyphicon check glyphicon-{{item.firefox}}"></i></td>
+                    <td><i class$="glyphicon check glyphicon-{{item.ieup}}"></i></td>
+                    <td><i class$="glyphicon check glyphicon-{{item.iedown}}"></i></td>
+                    <td><i class$="glyphicon check glyphicon-{{item.opera}}"></i></td>
+                    <td><i class$="glyphicon check glyphicon-{{item.safari}}"></i></td>
+                </tr>
+            </template>
+            </tbody>
+        </table>
+    </template>
+</dom-module>
+
+<!-- Registers custom element -->
+<script>
+    Polymer({
+        is: 'browser-support',
+        properties: {
+            browsers: {
+                type: Array,
+                value: ['Library/FrameWorks','Chrome','Firefox','IE9 and above','IE8','Opera','Safari']
+            },
+            supports: {
+                type: Array,
+                value: [
+                    {
+                    name:'Angular 2.0',
+                    chrome:'ok',
+                    firefox:'ok',
+                    ieup:'ok',
+                    iedown:'remove',
+                    opera:'ok',
+                    safari:'remove'
+                    },
+                    {
+                        name:'Angular 1.5',
+                        chrome:'ok',
+                        firefox:'ok',
+                        ieup:'ok',
+                        iedown:'remove',
+                        opera:'ok',
+                        safari:'remove'
+                    },
+                    {
+                        name:'Web components',
+                        chrome:'ok',
+                        firefox:'ok',
+                        ieup:'ok',
+                        iedown:'remove',
+                        opera:'ok',
+                        safari:'remove'
+                    },
+                    {
+                        name:'Polymer 1.0',
+                        chrome:'ok',
+                        firefox:'ok',
+                        ieup:'ok',
+                        iedown:'remove',
+                        opera:'ok',
+                        safari:'remove'
+                    },
+                    {
+                        name:'React',
+                        chrome:'ok',
+                        firefox:'ok',
+                        ieup:'ok',
+                        iedown:'remove',
+                        opera:'ok',
+                        safari:'remove'
+                    }]
+
+            }
+        }
+    });
+</script>

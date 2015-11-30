@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <!--Includes for web components-->
+    <!--Polyfill-->
     <script src="../bower_components/es6-shim/es6-shim.min.js"></script>
+    <script src="../bower_components/es6-shim/es6-sham.min.js"></script>
+    <script src="../bower_components/console-polyfill/index.js"></script>
+
+
+    <!--Includes for web components-->
     <script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <link rel="import" href="webComponents/hello-world.html">
 
@@ -13,6 +18,7 @@
     <link rel="import" href="../bower_components/polymer/polymer.html">
     <link rel="import" href="polymer/header.html">
     <link rel="import" href="polymer/hello-polymer.html">
+    <link rel="import" href="polymer/browserSupport.html">
 
     <!--import Angular files and typescript support-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
@@ -35,13 +41,18 @@
     </script>
 
     <!--Includes for react-->
-    <script src="../bower_components/es5-shim/es5-shim.min.js"></script>
-    <script src="../bower_components/es5-shim/es5-sham.min.js"></script>
-    <script src="../bower_components/react/react.js"></script>
-    <script src="../bower_components/react/react-with-addons.js"></script>
+    <script src="../../node_modules/react/dist/react.js"></script>
+    <script src="../../node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <style>
         h3{
             color:#0066cc !important;
+        }
+        .check.glyphicon-ok{
+            color:#005200;
+        }
+        .glyphicon-remove{
+          color:#8F0000;
         }
     </style>
 </head>
@@ -56,7 +67,7 @@
             </p>
         </div>
 
-        <div class="well" ng-app="app">
+       <!-- <div class="well" ng-app="app">
             <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Angular 1.5</h3>
             <div>
                 <tabs>
@@ -74,7 +85,7 @@
                     </pane>
                 </tabs>
             </div>
-        </div>
+        </div>-->
 
         <div class="well">
             <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Web components</h3>
@@ -94,19 +105,35 @@
         <div class="well">
             <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> React</h3>
             <p>
-                <div id="example"></div>
+                <div id="container"></div>
             </p>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="widget stacked widget-table action-table">
+
+                    <div class="widget-header">
+                        <i class="icon-th-list"></i>
+                        <h3>Browser Matrix</h3>
+                    </div> <!-- /widget-header -->
+
+                    <div class="widget-content">
+                         <browser-support></browser-support>
+                    </div> <!-- /widget-content -->
+
+                </div> <!-- /widget -->
+            </div>
         </div>
     </div>
 
-    <script src="react/compiled/reactComponent.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/babel" src="react/src/sample.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 </div>
 </body>
 </html>
