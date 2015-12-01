@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>React</title>
-    <script src="../../bower_components/es5-shim/es5-shim.min.js"></script>
-    <script src="../../bower_components/es5-shim/es5-sham.min.js"></script>
-    <script src="../../bower_components/react/react.js"></script>
-    <script src="../../bower_components/react/react-with-addons.js"></script>
+    <!--Polyfill-->
+    <script src="../../bower_components/es6-shim/es6-shim.min.js"></script>
+    <script src="../../bower_components/es6-shim/es6-sham.min.js"></script>
+    <!--Includes for react-->
+    <script src="../../node_modules/react/dist/react.js"></script>
+    <script src="../../node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <!--included web component lite-->
     <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
     <!-- Imports custom element -->
+    <link rel="import" href="../../bower_components/polymer/polymer.html">
     <link rel="import" href="../polymer/hello-polymer.html">
+    <script type="text/babel" src="../react/src/reactComponent.js"></script>
 </head>
 <body>
+    <h2>Using React</h2>
     <div id="example"></div>
-    <script src="compiled/reactComponent.js"></script>
 
+    <h2>Using Polymer</h2>
     <!-- Runs custom element -->
-    <hello-world who="Polymer" desc="Web components using polymer."></hello-world>
+    <hello-polymer who="Polymer" desc="Web components using polymer."></hello-polymer>
 </body>
 </html>
